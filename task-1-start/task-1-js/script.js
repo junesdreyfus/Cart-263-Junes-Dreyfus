@@ -88,12 +88,21 @@ document.querySelectorAll("img")[0].setAttribute("src","task-1-images/seven.png"
 /* 4: Select the third paragraph element on the page and 
 replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
 /***CODE */
-document.querySelectorAll('p')[2].textContent = "test123";
-document.querySelectorAll('p')[2].appendChild(document.createElement('h2'));
+let thirdParagraph = document.querySelectorAll('p')[2]
+
+let h2element = document.createElement('h2');
+
+thirdParagraph.textContent = "test123";
+thirdParagraph.appendChild(h2element);
 /*************************************** */
 /* 5: Select the fourth paragraph element on the page and 
 add to the existing content an h2 element containing the text `TEST 123`
 /***CODE */
+let fourthParagraph = document.querySelectorAll('p')[3];
+
+h2element.textContent = "TEST 123";
+fourthParagraph.appendChild(h2element);
+
 
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
