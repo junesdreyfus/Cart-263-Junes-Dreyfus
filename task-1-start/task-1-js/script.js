@@ -62,77 +62,78 @@ console.log("we are a go!")
 /*** END PART ONE ACCESS */ 
 
 
-/*************************************** */
-/*** START PART TWO MODIFY */ 
-/*************************************** */
-/* 1: Select the first paragraph and replace the text within the paragraph... */
-/***CODE */
-document.querySelector("p").textContent='New text in paragraph one: text changed by Junes Dreyfus on the following date: 21/01/2025.';
-/*************************************** */
-/* 2: Select all elements in the HTML that have the class name content-container
- and change the background color ... of first and second ...*/
-/***CODE */
+// /*************************************** */
+// /*** START PART TWO MODIFY */ 
+// /*************************************** */
+// /* 1: Select the first paragraph and replace the text within the paragraph... */
+// /***CODE */
+// document.querySelector("p").textContent='New text in paragraph one: text changed by Junes Dreyfus on the following date: 21/01/2025.';
+// /*************************************** */
+// /* 2: Select all elements in the HTML that have the class name content-container
+//  and change the background color ... of first and second ...*/
+// /***CODE */
+// //this is no bueno/
+// // console.log(document.getElementsByClassName("content-container"));
+// // document.querySelector(".content-container").style.background = "#FFA500";
+// // document.querySelector('.content-container').id= ["1"].style.background = "#800080";
 
-// console.log(document.getElementsByClassName("content-container"));
-// document.querySelector(".content-container").style.background = "#FFA500";
-// document.querySelector('.content-container').id= ["1"].style.background = "#800080";
+// //this is the actual result/
+// let contentContainers = document.querySelectorAll('.content-container');
+// contentContainers[0].style.backgroundColor="#FFA500";
+// contentContainers[1].style.backgroundColor="#800080";
+// /*************************************** */
+// /* 3: Change the src element of the first image element on the page to be ...
+// /***CODE */
+// document.querySelectorAll("img")[0].setAttribute("src","task-1-images/seven.png") 
+// /*************************************** */
+// /* 4: Select the third paragraph element on the page and 
+// replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
+// /***CODE */
+// let thirdParagraph = document.querySelectorAll('p')[2]
 
-let contentContainers = document.querySelectorAll('.content-container');
-contentContainers[0].style.backgroundColor="#FFA500";
-contentContainers[1].style.backgroundColor="#800080";
-/*************************************** */
-/* 3: Change the src element of the first image element on the page to be ...
-/***CODE */
-document.querySelectorAll("img")[0].setAttribute("src","task-1-images/seven.png") 
-/*************************************** */
-/* 4: Select the third paragraph element on the page and 
-replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
-/***CODE */
-let thirdParagraph = document.querySelectorAll('p')[2]
+// let h2element = document.createElement('h2');
 
-let h2element = document.createElement('h2');
+// thirdParagraph.textContent = "test123";
+// thirdParagraph.appendChild(h2element);
+// /*************************************** */
+// /* 5: Select the fourth paragraph element on the page and 
+// add to the existing content an h2 element containing the text `TEST 123`
+// /***CODE */
+// let fourthParagraph = document.querySelectorAll('p')[3];
 
-thirdParagraph.textContent = "test123";
-thirdParagraph.appendChild(h2element);
-/*************************************** */
-/* 5: Select the fourth paragraph element on the page and 
-add to the existing content an h2 element containing the text `TEST 123`
-/***CODE */
-let fourthParagraph = document.querySelectorAll('p')[3];
+// h2element.textContent = "TEST 123";
+// fourthParagraph.appendChild(h2element);
 
-h2element.textContent = "TEST 123";
-fourthParagraph.appendChild(h2element);
+// /*************************************** */
+// /* 6: Select the fifth paragraph element on the page and add to the existing content 
+// an img element that holds `one.png`, and add the class newStyle to said paragraph element.
+// /***CODE */
 
-/*************************************** */
-/* 6: Select the fifth paragraph element on the page and add to the existing content 
-an img element that holds `one.png`, and add the class newStyle to said paragraph element.
-/***CODE */
+// let fifthParagraph = document.querySelectorAll('p')[4];
+// let imgelement = document.createElement('img');
 
-let fifthParagraph = document.querySelectorAll('p')[4];
-let imgelement = document.createElement('img');
+// imgelement.setAttribute("src","task-1-images/one.png");
+// fifthParagraph.appendChild(imgelement);
 
-imgelement.setAttribute("src","task-1-images/one.png");
-fifthParagraph.appendChild(imgelement);
+// fifthParagraph.classList.add("newStyle");
+// /*************************************** */
+// /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
+// then access all elements with class name inner-container and save to a variable called `innerContainers`. 
+// Next, iterate over the colors array, and for each color: 
+// assign the element from innerContainers variable with the same index 
+// (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
+// a background using that color.
+// /***CODE */
+// let colors = ['red','blue','green','orange'];
+// let innerContainers = document.querySelectorAll('.inner-container');
 
-fifthParagraph.classList.add("newStyle");
-/*************************************** */
-/* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
-then access all elements with class name inner-container and save to a variable called `innerContainers`. 
-Next, iterate over the colors array, and for each color: 
-assign the element from innerContainers variable with the same index 
-(i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
-a background using that color.
-/***CODE */
-let colors = ['red','blue','green','orange'];
-let innerContainers = document.querySelectorAll('.inner-container');
-
-innerContainers[0].style.backgroundColor=colors[0];
-innerContainers[1].style.backgroundColor=colors[1];
-innerContainers[2].style.backgroundColor=colors[2];
-innerContainers[3].style.backgroundColor=colors[3];
-//I'm sure there's a way of doing that with a loop/
-/*************************************** */
-/*** END PART TWO MODIFY */ 
+// innerContainers[0].style.backgroundColor=colors[0];
+// innerContainers[1].style.backgroundColor=colors[1];
+// innerContainers[2].style.backgroundColor=colors[2];
+// innerContainers[3].style.backgroundColor=colors[3];
+// //I'm sure there's a way of doing that with a loop/
+// /*************************************** */
+// /*** END PART TWO MODIFY */ 
 
 
 /*************************************** */
@@ -149,10 +150,34 @@ innerContainers[3].style.backgroundColor=colors[3];
 /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
 passing the current allPTagsThree element as the parent with each iteration.*/
 /***CODE */
+let allPTagsThree = document.querySelectorAll('p');
+
+function customCreateElements(parent){
+    let newP = document.createElement("p");
+    newP.textContent = `using create Element`;
+    newP.style.backgroundColor = "green";
+    newP.style.color = "white";
+    parent.appendChild(newP);
+}
+
+customCreateElements(allPTagsThree[0]);
+customCreateElements(allPTagsThree[1]);
+customCreateElements(allPTagsThree[2]);
+customCreateElements(allPTagsThree[3]);
+customCreateElements(allPTagsThree[4]);
+customCreateElements(allPTagsThree[5]);
+customCreateElements(allPTagsThree[6]);
+customCreateElements(allPTagsThree[7]);
+customCreateElements(allPTagsThree[8]);
 
 
+//i feel like my understanding of any of this is 99% empirical but hey!/
+//I will do a loop if I'm in the mood by the end/
 /***EXPLANATION::
- * 
+ * Not sure about this part of the exercice.
+ * I created a function that would create a new paragraph with custom properties (color, background and text)
+ * then demonstrated how it could be added to preexisting paragraphs (the latin phrase thing)
+ * It is displayed at the end with all of its custom properties = new separate paragraphs are being added each time the function is called
  * 
  */
 
