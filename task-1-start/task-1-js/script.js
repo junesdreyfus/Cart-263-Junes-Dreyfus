@@ -103,13 +103,18 @@ let fourthParagraph = document.querySelectorAll('p')[3];
 h2element.textContent = "TEST 123";
 fourthParagraph.appendChild(h2element);
 
-
 /*************************************** */
 /* 6: Select the fifth paragraph element on the page and add to the existing content 
 an img element that holds `one.png`, and add the class newStyle to said paragraph element.
 /***CODE */
 
+let fifthParagraph = document.querySelectorAll('p')[4];
+let imgelement = document.createElement('img');
 
+imgelement.setAttribute("src","task-1-images/one.png");
+fifthParagraph.appendChild(imgelement);
+
+fifthParagraph.classList.add("newStyle");
 /*************************************** */
 /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
 then access all elements with class name inner-container and save to a variable called `innerContainers`. 
@@ -118,7 +123,14 @@ assign the element from innerContainers variable with the same index
 (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
 a background using that color.
 /***CODE */
+let colors = ['red','blue','green','orange'];
+let innerContainers = document.querySelectorAll('.inner-container');
 
+innerContainers[0].style.backgroundColor=colors[0];
+innerContainers[1].style.backgroundColor=colors[1];
+innerContainers[2].style.backgroundColor=colors[2];
+innerContainers[3].style.backgroundColor=colors[3];
+//I'm sure there's a way of doing that with a loop/
 /*************************************** */
 /*** END PART TWO MODIFY */ 
 
