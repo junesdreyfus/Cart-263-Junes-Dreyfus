@@ -172,13 +172,15 @@ customCreateElements(allPTagsThree[8]);
 
 
 //i feel like my understanding of any of this is 99% empirical but hey!/
-//I will do a loop if I'm in the mood by the end/
+//I will do a loop if I'm in the mood by the end, if there is no loop, please assume the worst/
 /***EXPLANATION::
+ * 
  * Not sure about this part of the exercice.
  * I created a function that would create a new paragraph with custom properties (color, background and text)
  * then demonstrated how it could be added to preexisting paragraphs (the latin phrase thing)
- * It is displayed at the end with all of its custom properties = new separate paragraphs are being added each time the function is called
- * 
+ * It is displayed at the end with all of its custom properties = new separate paragraphs are being added to the appropriate place each time the function is called
+ * That said I'm not sure about the use of "parent", is it just a random placeholder variable or does js recognize it ? I've made some tests to better understand but still not sure.
+ * I made a little scream of joy when this worked first try.
  */
 
 /*************************************** */
@@ -203,10 +205,35 @@ customCreateElements(allPTagsThree[8]);
 
 /***CODE */
 
+function customNewBoxCreate(parent){
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("testDiv");
+    parent.appendChild(newDiv);
+    return newDiv
+}
+
+const parentElement1 = document.getElementById('new-grid');
+
+let size = 45
+for (let j = 0; j < 10; j+=1) {
+    for (let i = 0; i < 10; i+=1) {
+        const returnedDiv = customNewBoxCreate(parentElement1);
+        returnedDiv.style.left = `${i* size}px`;
+        returnedDiv.style.top = `${j* size}px`;
+    }
+}
+
+console.log(document.getElementsByClassName("testDiv"));
+
 
 /***EXPLANATION::
- * 
- * 
+ * The console returns 100 elements, one for each cell of the page
+ * Each cell is created with the class testDiv (they're all new div created under the variable "newDiv" to which i've added the class (.testDiv))
+ * When I ask it to select all of the elements with a "testDiv" class, they all fit this criteria.
+ * Full disclosure, I cross referenced my code with chatGPT, which allowed me to catch a problem earlier
+ *  mainly the idea of writing `${}px` rather than just regular old 'size*j'
+ * or even '${j*size}'
+ * The code did end up showing the grid afterward, I just needed help with tbe best way to 'phrase' what i was looking for..
  */
 
 /*************************************** */
@@ -226,17 +253,38 @@ customCreateElements(allPTagsThree[8]);
 /***CODE */
 
 
+let parentElement2 = document.getElementById('new-grid-three');
+
+for (let j = 0; j < 10; j+=1) {
+    for (let i = 0; i < 10; i+=1) {
+        const returnedDiv = customNewBoxCreate(parentElement2);
+
+        returnedDiv.style.left = `${i* size}px`;
+        returnedDiv.style.top = `${j* size}px`;
+
+        if (i % 3 === 0) {
+            returnedDiv.style.backgroundColor = 'red';
+            returnedDiv.textContent = '0';
+        } else if (i % 3 === 1) {
+            returnedDiv.style.backgroundColor = 'orange';
+            returnedDiv.textContent = '1';
+        } else if (i % 3 === 2){
+            returnedDiv.style.backgroundColor = 'yellow';
+            returnedDiv.textContent = '2';
+        }
+    }
+}
+
+
 /***EXPLANATION::
- * 
- * 
+ * I had to trust the process
+ * Do I need to provide an explanation here ?
+ * I struggled with the concept of a remainder until i translated it
+ * same with the results, I didn't understand why the 1st row would be having 0 remainder
+ * until I realized it was row 0
  */
 
 /*************************************** */
 /*** END PART THREE CREATE */ 
 /*************************************** */
-    
-
-
-
-
 }
