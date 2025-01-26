@@ -279,7 +279,7 @@ for (let j = 0; j < 10; j+=1) {
 /***EXPLANATION::
  * I had to trust the process
  * Do I need to provide an explanation here ?
- * I struggled with the concept of a remainder until i translated it
+ * I struggled with the concept of a remainder until i translated it in french
  * same with the results, I didn't understand why the 1st row would be having 0 remainder
  * until I realized it was row 0
  */
